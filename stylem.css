@@ -1,0 +1,103 @@
+body{
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+}
+
+section{
+	width: 100%;
+	height: 100vh;
+	background-image:url(Desert.jpg);
+	background-size: cover;
+}
+
+.desk,
+  .tab {
+	position: absolute;
+	width: 100%;
+	background: rgba(100,255,200,0.5);
+	padding: 0 100px;
+	box-sizing: border-box;
+	border-bottom: 1px solid rgba(0,0,0,0.2)
+}
+
+.desk nav{
+	position: relative;
+	float: right;
+}
+
+.desk nav ul {
+	margin: 0;
+	padding: 0;
+	display: flex;
+}
+
+.desk nav ul li, 
+   .tab nav ul li{
+	list-style: none;
+}
+
+.desk nav ul a{
+	display: block;
+	text-transform: uppercase;
+	font-weight: bold;
+	padding: 33px 20px;
+	text-decoration: none;
+}
+
+.desk nav ul li ul{
+	display: block;
+	background: rgba(100,255,200,0.5);
+	min-width: 250px;
+	position: absolute;
+	margin-top:  1px;
+	box-shadow:  0 2px 5px rgba(0,0,0,0.2);
+	transition: 0.5s;
+	opacity: 0;
+	visibility: hidden;
+	transform: translateY(40px);
+	transition: 0.7s ease;
+}
+
+.desk nav ul li ul li a{
+	padding: 15px 10px;
+}
+
+.desk nav ul li:hover ul{
+	opacity: 1;
+	visibility: visible;
+	transform: translateY(1px);
+}
+
+nav ul li:hover, 
+    nav ul li.active{
+	background-color: #ddd;
+}
+
+div.desk{
+	display: block;
+}
+
+div.tab{
+	display: none;
+}
+
+@media screen and (max-width: 768px){
+	
+	div.desk{
+		display: none;
+	}
+	
+	div.tab{
+		display: block;
+	}
+	
+	.tab nav{
+		position: relative;
+	}
+	
+	.tab nav ul {
+		width: 50%;
+	}
+	
+}
